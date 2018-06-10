@@ -5,7 +5,7 @@ import           System.TimeIt (timeItT)
 
 main :: IO ()
 main = do
-    let n = 10000000
+    let nIter = 10000000    -- number of iterations
 
     lfsr <- newLFSR
 
@@ -13,12 +13,14 @@ main = do
 
     (tBaseLine, _) <- timeItT $ do
         setLFSR lfsr 42
-        repeatLFSR lfsr n
+        repeatLFSR lfsr nIter
         getLFSR lfsr
     putStrLn $ "Baseline: " ++ show tBaseLine
 
     (t, _) <- timeItT $ do
         setLFSR lfsr 42
-        replicateM_ n (stepLFSR lfsr)
+        replicateM_ nIter (stepLFSR lfsr)
         getLFSR lfsr
     putStrLn $ "IO:       " ++ show t
+
+    putStrLn $ "factor:   " ++ show (t/tBaseLine)

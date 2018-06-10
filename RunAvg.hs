@@ -12,7 +12,7 @@ avg lfsr n = mean <$> replicateM n (step1 lfsr) where
 
 main :: IO ()
 main = do
-    let n = 10000000
+    let nIter = 10000000    -- number of iterations
 
     lfsr <- newLFSR
 
@@ -20,10 +20,12 @@ main = do
 
     (tBaseLine, _) <- timeItT $ do
         setLFSR lfsr 42
-        avgLFSR lfsr n
+        avgLFSR lfsr nIter
     putStrLn $ "Baseline: " ++ show tBaseLine
 
     (t, _) <- timeItT $ do
         setLFSR lfsr 42
-        avg lfsr n
+        avg lfsr nIter
     putStrLn $ "IO:       " ++ show t
+
+    putStrLn $ "factor:   " ++ show (t/tBaseLine)
