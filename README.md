@@ -4,7 +4,7 @@ This is the source code for the (Stackoverflow question)[].
 
 The project struture is as follows:
 
-`lfsr/` has the C implementing a maximum length 16-bit [LFSR](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). The malloc'ed `struct` is unnecessary, but mimicks how a more complicated C library would work. The point is not to have the most efficient LFSR implementation, but a somewhat meaningful workload for benchmarking and investigating the efficiency of Haskell programs.
+`lfsr/` has the C implementing of a maximum length 16-bit LFSR. For more information on LFSRs see the [Wikipedia article](https://en.wikipedia.org/wiki/Linear-feedback_shift_register), from where the LFSR implementation was taken. Note that the malloc'ed `struct` is unnecessary, but mimicks how a more complicated C library would work. The point is not to have the most efficient LFSR implementation, but some workload for benchmarking and investigating the efficiency of Haskell programs.
 
 `src/` has module `LFSR` which is the Haskell wrapper for the C source code.
 
