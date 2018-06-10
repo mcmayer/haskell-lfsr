@@ -1,14 +1,14 @@
 name:                lfsr
 version:             0.1.0.0
--- synopsis:
--- description:
+synopsis:            This is the source code for the Stackoverflow question ....
+description:         A wrapper around a C implementation of a 16-bit LFSR, 
+                     with some benchmarks to investigate the efficiency of Haskell.
 homepage:            https://github.com/githubuser/haskell-lfsr#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2018 Author name here
-category:            Web
+author:              Markus Mayer
+copyright:           2018 Markus Mayer
+category:            Testing
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
