@@ -43,6 +43,18 @@ executable run-avg
   ghc-options: -Wall -O2 -fforce-recomp -optc "-funroll-loops" -fasm -threaded -optlc-mcpu=native -funbox-strict-fields -pgmlo opt-3.9 -pgmlc llc-3.9 
   ghc-prof-options: -fprof-auto
 
+executable run-avg-streaming
+  hs-source-dirs:      .
+  main-is:             RunAvgStreaming.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , lfsr
+                     , monad-extras
+                     , timeit
+                     , streaming
+  ghc-options: -Wall -O2 -fforce-recomp -optc "-funroll-loops" -fasm -threaded -optlc-mcpu=native -funbox-strict-fields -pgmlo opt-3.9 -pgmlc llc-3.9 
+  ghc-prof-options: -fprof-auto
+
 source-repository head
   type:     git
   location: https://github.com/mcmayer/haskell-lfsr
