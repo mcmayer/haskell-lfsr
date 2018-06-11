@@ -66,7 +66,7 @@ executable run-avg-vector
                      , timeit
                      , vector
   ghc-options: -Wall -O2 -fforce-recomp -optc "-funroll-loops" -fasm -threaded -optlc-mcpu=native -funbox-strict-fields -pgmlo opt-3.9 -pgmlc llc-3.9 
-  ghc-prof-options: -fprof-a
+  ghc-prof-options: -fprof-auto
 source-repository head
   type:     git
   location: https://github.com/mcmayer/haskell-lfsr
