@@ -7,7 +7,7 @@ run: build
 	stack exec -- run-repeat && \
 	stack exec -- run-avg && \
 	stack exec -- run-avg-streaming && \
-	stack exec -- run-avg-vectorg
+	stack exec -- run-avg-vector
 
 build-profile:
 	stack build --profile
