@@ -11,7 +11,7 @@ step1' lfsr = fromIntegral <$> step1 lfsr
 avg :: LFSR -> Int -> IO Double
 avg lfsr n = do
     let stream = V.replicateM n (step1' lfsr)
-    V.foldl (+) 0.0 stream
+    (/fromIntegral n) <$> V.foldl (+) 0.0 stream
 
 main :: IO ()
 main = do
