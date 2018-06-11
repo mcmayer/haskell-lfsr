@@ -71,6 +71,6 @@ step_get_lfsr(state_t* s) {
 
 double avg(state_t* s, int n) {
     double sum = 0;
-    for(int i=0; i<n; i++, sum += step_get_lfsr(s));
+    for(int i=0; i<n; i++, sum += (double)step_get_lfsr(s));
     return sum / (double)n;
 }
