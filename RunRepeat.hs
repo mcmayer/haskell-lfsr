@@ -10,7 +10,7 @@ main = do
     lfsr <- newLFSR
 
     putStrLn "=== RunRepeat ======="
-    putStrLn $ "#iter   : " ++ show nIter
+    putStrLn $ "#iter:    " ++ show nIter
 
     (tBaseLine, _) <- timeItT $ do
         setLFSR lfsr 42
