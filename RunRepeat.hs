@@ -5,11 +5,12 @@ import           System.TimeIt (timeItT)
 
 main :: IO ()
 main = do
-    let nIter = 10000000    -- number of iterations
+    let nIter = 100000000    -- number of iterations
 
     lfsr <- newLFSR
 
     putStrLn "=== RunRepeat ======="
+    putStrLn $ "#iter   : " ++ show nIter
 
     (tBaseLine, _) <- timeItT $ do
         setLFSR lfsr 42

@@ -17,6 +17,7 @@ main = do
     lfsr <- newLFSR
 
     putStrLn "=== RunAvg ========="
+    putStrLn $ "#iter   : " ++ show nIter
 
     (tBaseLine, _) <- timeItT $ do
         setLFSR lfsr 42

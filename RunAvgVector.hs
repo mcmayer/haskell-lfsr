@@ -15,11 +15,12 @@ avg lfsr n = do
 
 main :: IO ()
 main = do
-    let nIter = 10000000    -- number of iterations
+    let nIter = 200000000    -- number of iterations
 
     lfsr <- newLFSR
 
     putStrLn "=== RunVector ========="
+    putStrLn $ "#iter   : " ++ show nIter
 
     (tBaseLine, _) <- timeItT $ do
         setLFSR lfsr 42
