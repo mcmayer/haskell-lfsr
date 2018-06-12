@@ -22,9 +22,10 @@ compares the run-times for a run of the LFSR.
 
 ```bash
 === RunRepeat =======
-Baseline: 2.2168e-2
-IO:       3.9276e-2
-factor:   1.7717430530494405
+#iter:    100000000
+Baseline: 0.193323
+IO:       0.335369
+factor:   1.7347599613082767
 ```
 
 #### `RunRepeatAlloca.hs`
@@ -34,9 +35,10 @@ introducing a `Storable` that gets allocated and used with `malloca`.
 
 ```bash
 === RunRepeatAlloca =======
-Baseline: 2.2168e-2
-IO:       3.9276e-2
-factor:   1.7717430530494405
+#iter:    100000000
+Baseline: 0.194293
+IO:       0.333789
+factor:   1.7179671938772885
 ```
 
 #### `RunAvg.hs`
@@ -45,9 +47,10 @@ compares the run-times for the calculation of the average over a run of the LFSR
 
 ```bash
 === RunAvg =========
-Baseline: 1.944e-2
-IO:       1.418907
-factor:   72.98904320987654
+#iter:    10000000
+Baseline: 2.1159999999999998e-2
+IO:       1.358567
+factor:   64.20448960302458
 ```
 
 #### `RunAvgStreaming.hs`
@@ -56,9 +59,10 @@ does the same as `RunAvg.hs`, but it uses the [`streaming`](http://hackage.haske
 
 ```bash
 === RunAvgStreaming ===
-Baseline: 2.2519e-2
-IO:       0.15731599999999998
-factor:   6.985922998356942
+#iter:    50000000
+Baseline: 0.102534
+IO:       0.7660629999999999
+factor:   7.471307078627577
 ```
 
 #### `RunAvgVector.hs`
@@ -67,9 +71,10 @@ does the same as `RunAvg.hs`, but it uses the [`Data.Vector.Fusion.Stream.Monadi
 
 ```bash
 === RunVector =========
-Baseline: 1.9986e-2
-IO:       4.9146e-2
-factor:   2.4590213149204443
+#iter:    200000000
+Baseline: 0.393445
+IO:       0.889796
+factor:   2.261551169795016
 ```
 
 #### `Makefile`
