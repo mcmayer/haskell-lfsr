@@ -5,6 +5,7 @@ build:
 
 run: build
 	stack exec -- run-repeat && \
+	stack exec -- run-repeat-alloca && \
 	stack exec -- run-avg && \
 	stack exec -- run-avg-streaming && \
 	stack exec -- run-avg-vector
@@ -14,6 +15,7 @@ build-profile:
 
 profile: build-profile
 	stack exec -- run-repeat +RTS -p -RTS; \
+	stack exec -- run-repeat-alloca +RTS -p -RTS; \
 	stack exec -- run-avg +RTS -p -RTS; \
 	stack exec -- run-avg-streaming +RTS -p -RTS
 	stack exec -- run-avg-vector +RTS -p -RTS
