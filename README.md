@@ -31,7 +31,7 @@ factor:   1.7347599613082767
 #### `RunRepeatAlloca.hs`
 
 do the same as `RunRepeat.hs`, but with a different FFI that avoids the `withForeignPtr` calls by
-introducing a `Storable` that gets allocated and used with `malloca`.
+introducing a [`Storable`](http://hackage.haskell.org/package/base-4.11.1.0/docs/Foreign-Storable.html) that gets allocated and used with [`alloca`](http://hackage.haskell.org/package/base-4.11.1.0/docs/Foreign-Marshal-Alloc.html#alloca).
 
 ```bash
 === RunRepeatAlloca =======
