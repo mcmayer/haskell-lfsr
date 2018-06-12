@@ -16,12 +16,24 @@ has the C implementing of a maximum length 16-bit LFSR. For more information on 
 
 has module `LFSR` which is the Haskell wrapper for the C source code.
 
-#### `RepeatAvg.hs`
+#### `RunRepeat.hs`
 
 compares the run-times for a run of the LFSR.
 
 ```bash
 === RunRepeat =======
+Baseline: 2.2168e-2
+IO:       3.9276e-2
+factor:   1.7717430530494405
+```
+
+#### `RunRepeatAlloca.hs`
+
+do the same as `RunRepeat.hs`, but with a different FFI that avoids the `withForeignPtr` calls by
+introducing a `Storable` that gets allocated and used with `malloca`.
+
+```bash
+=== RunRepeatAlloca =======
 Baseline: 2.2168e-2
 IO:       3.9276e-2
 factor:   1.7717430530494405
