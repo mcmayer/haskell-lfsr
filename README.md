@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the source code for the Stackoverflow question ["Squeezing more performance out of monadic streams in Haskel"](https://stackoverflow.com/questions/50791698/squeezing-more-performance-out-of-monadic-streams-in-haskell).
+This is the source code for the Stackoverflow question ["Squeezing more performance out of monadic streams in Haskell"](https://stackoverflow.com/questions/50791698/squeezing-more-performance-out-of-monadic-streams-in-haskell).
 
 ## Project Structure
 
