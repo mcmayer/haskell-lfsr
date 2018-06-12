@@ -20,7 +20,7 @@ main = do
     lfsr <- newLFSR
 
     putStrLn "=== RunAvgStreaming ==="
-    putStrLn $ "#iter   : " ++ show nIter
+    putStrLn $ "#iter:    " ++ show nIter
 
     (tBaseLine, _) <- timeItT $ do
         setLFSR lfsr 42
