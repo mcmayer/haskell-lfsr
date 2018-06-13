@@ -1,3 +1,5 @@
 *.prof
+*.s
+*.html
 .stack-work/
 .vscode/

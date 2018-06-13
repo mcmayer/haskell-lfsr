@@ -8,6 +8,7 @@ module LFSR (
     LFSRStruct'(..), repeatSteps,
 ) where
 
+import           Control.Monad           (forM_)
 import           Control.Monad.ST        (ST, runST)
 import           Control.Monad.ST.Unsafe (unsafeIOToST)
 import           Data.Word               (Word32)
@@ -98,5 +99,5 @@ repeatSteps start n = alloca rep' where
     rep' p = do
         setLFSR2 p start
         (sequence_ . (replicate n)) (stepLFSR2 p)
+        -- forM_ [1..n] $ \_->(stepLFSR2 p)
         getLFSR2 p
-

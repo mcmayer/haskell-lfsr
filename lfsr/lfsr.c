@@ -46,6 +46,7 @@ get_lfsr(state_t* s) {
 
 /* One step. Taps: 16 14 13 11; feedback polynomial: x^16 + x^14 + x^13 + x^11 + 1 */
 void 
+// __attribute__ ((noinline))   /* uncomment this to see the effect of un-inlined step_lfsr */
 step_lfsr(state_t* s)
 {
     uint32_t lfsr = s->state;
