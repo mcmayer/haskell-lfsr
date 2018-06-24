@@ -21,7 +21,7 @@ import           Foreign.Storable
 data LFSRStruct     -- | empty type
 
 data LFSR = LFSR
-        (ForeignPtr LFSRStruct) -- | Pointer to C struct (malloc'ed)
+         (ForeignPtr LFSRStruct) -- ^ Pointer to C struct (malloc'ed)
     deriving Show
 
 foreign import ccall unsafe "lfsr.h new_lfsr"
@@ -60,10 +60,12 @@ setLFSR :: LFSR -> Word32 -> IO ()
 setLFSR (LFSR p) !v = withForeignPtr p $ \p'->setLFSR' p' v
 {-# INLINE setLFSR #-}
 
+-- | Do one LFSR step
 stepLFSR :: LFSR -> IO ()
 stepLFSR (LFSR p) = withForeignPtr p $ \p'->stepLFSR' p'
 {-# INLINE stepLFSR #-}
 
+-- | Repeat LFSR n times
 repeatLFSR :: LFSR -> Int -> IO ()
 repeatLFSR (LFSR p) !n = withForeignPtr p $ \p'->repeatLFSR' p' n
 {-# INLINE repeatLFSR #-}
