@@ -32,4 +32,7 @@ core:
 clean:
 	stack clean
 
-.PHONY: build run build-profile profile code clean
+hoogle-server:
+	stack hoogle -- server --local
+
+.PHONY: build run build-profile profile code clean hoogle-server
